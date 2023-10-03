@@ -4,7 +4,6 @@ def twoComplement(x):
     p = 2**(math.floor(math.log(x,2)) + 2) - 1
     return p-x+1
     
-
 def getBitsCount(x):
     t = x
     count=0
