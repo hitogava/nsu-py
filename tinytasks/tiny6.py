@@ -1,5 +1,9 @@
 def flatten(currentlist):
     res = []
     for el in currentlist:
-        res += flatten(el) if isinstance(el,list) else [el]
+        if isinstance(el, list):
+            for k in flatten(el):
+                res.append(k)
+        else:
+            res.append(el)
     return res
