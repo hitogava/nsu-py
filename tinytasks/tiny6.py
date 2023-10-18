@@ -2,8 +2,7 @@ def flatten(currentlist):
     res = []
     for el in currentlist:
         if isinstance(el, list):
-            for k in flatten(el):
-                res.append(k)
+            res.extend(flatten(el))
         else:
             res.append(el)
     return res

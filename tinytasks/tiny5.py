@@ -3,8 +3,8 @@ def sum(x, y):
 
 
 def specialize(f, *args, **kwargs):
-    def foo(*fooargs):
-        return f(*args, *fooargs, **kwargs)
+    def foo(*fooargs, **fookwargs):
+        return f(*args, *fooargs, **kwargs, **fookwargs)
     return foo
 
 
