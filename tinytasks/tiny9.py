@@ -2,7 +2,7 @@ def wrap(target: str, st="", end="") -> str:
     return st + target + end
 
 
-def results_per_algo(algos: list, results: list[list]):
+def results_per_algo(algos: list, results: list[list]) -> list:
     res = []
     for i in range(len(algos)):
         curr = []
@@ -49,6 +49,8 @@ def format_table(benchmarks: list, algos: list, results: list[list]):
         print(row)
 
 
-format_table(["best case", "the worst case", "the totally really fully fcking chaotic bad case"],
+format_table(["best case", "the worst case", "the totally really\
+fully fcking chaotic bad case"],
              ["quick super puper sort", "merge sort", "bubble sort"],
-             [['0.0000001231231274374327984324327843287432872348798732432', 1.56, 2.0], [3.3, 2.9, 3.9], [0, 0, 0]])
+             [['0.0000001231231274374327984324327843287432872348798732432',
+               1.56, 2.0], [3.3, 2.9, 3.9], [0, 0, 0]])
