@@ -23,5 +23,11 @@ def chain(*iterables):
     return MyIterator(iterables)
 
 
+def better_chain(*iterables):
+    for i in range(len(iterables)):
+        yield from iterables[i]
+
+
 my_list = ("a", "b")
-print(list(chain([1, 2, 3, 5, 6], [2, 2, 8], my_list)))
+print(list(chain([1,2,3, 5, 6], [2,2,8], my_list)))
+print(list(better_chain([1,2,3, 5, 6], [2,2,8], my_list)))
