@@ -5,9 +5,6 @@ class MyIterator:
         self.currIterableIndex = 0
 
     def __next__(self):
-        if self.currIterableIndex == len(self.iterables):
-            raise StopIteration
-
         if self.currElementIndex == len(self.iterables[self.currIterableIndex]):
             self.currElementIndex = 0
             if (self.currIterableIndex + 1) == len(self.iterables):
