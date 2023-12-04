@@ -5,7 +5,7 @@ def flatten(currentlist, depth=None):
             if depth is None:
                 res.extend(flatten(el))
             elif depth:
-                res.extend(flatten(el,depth-1))
+                res.extend(flatten(el, depth - 1))
             else:
                 res.append(el)
         else:
