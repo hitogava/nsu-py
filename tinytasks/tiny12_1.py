@@ -9,12 +9,8 @@ def take(seq, n):
 
 
 def cycle(iterable):
-    visited = []
-    for i in iterable:
-        yield i
-        visited.append(i)
     while True:
-        yield from visited
+        yield from iterable
 
 
-print(take(cycle([1, 2, 3]), 6))
+print(take(cycle([1, 2, 3]), 10))
