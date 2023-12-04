@@ -8,18 +8,14 @@ def take(seq, n):
     return res
 
 
-class MyIterator:
-    def __init__(self, collection):
-        self.collection = collection
-        self.currIndex = 0
-
-    def __next__(self):
-        self.currIndex = (self.currIndex + 1) % len(self.collection)
-        return self.collection[self.currIndex - 1]
-
-
-def cycle(elems):
-    return MyIterator(elems)
+def cycle(iterable):
+    visited = []
+    for i in iterable:
+        yield i
+        visited.append(i)
+    while True:
+        for v in visited:
+            yield v
 
 
 print(take(cycle([1, 2, 3]), 4))
