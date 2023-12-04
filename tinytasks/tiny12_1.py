@@ -14,8 +14,7 @@ def cycle(iterable):
         yield i
         visited.append(i)
     while True:
-        for v in visited:
-            yield v
+        yield from visited
 
 
-print(take(cycle([1, 2, 3]), 4))
+print(take(cycle([1, 2, 3]), 6))
